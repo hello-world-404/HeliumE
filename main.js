@@ -20,7 +20,8 @@ function createWindow () {
     }
   })
 
-  win.webContents.openDevTools()
+  //Only open in debug
+  //win.webContents.openDevTools()
   
   win.loadFile('index.html')
 }

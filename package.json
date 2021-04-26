@@ -5,7 +5,8 @@
     "description": "Helium toolbox",
     "main": "main.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "package": "electron-packager . HeliumE --win --out ../output --arch=x64 --app-version=0.1.0 --electron-version=12.0.5  --icon=./icon.ico"
     },
     "devDependencies": {
         "electron": "^12.0.5"

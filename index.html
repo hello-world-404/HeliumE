@@ -76,6 +76,11 @@
         resize: none;
         font-family: consolas;
     }
+
+    input{
+        width: 85%;
+        height: 18px;
+    }
     </style>
     <meta charset="UTF-8">
     <title>Helium</title>
@@ -85,6 +90,7 @@
 <body style="background: white;">
     <div class="header">
         <h1>Helium toolbox</h1>
+        <i>Where there's a will, there's a way.</i>
     </div>
     <div class="card">
         <h3 >ADB命令</h3>
@@ -110,6 +116,20 @@
     </div>
 
     <div class="card">
+        <h3>手机信息</h3>
+        <p id="phoneModel">手机型号：</p>
+        <p id="phoneMake">手机厂商：</p>
+        <p id="sysVersion">系统版本：</p>
+        <button class="ripple" id="getPhoneInfo" onclick="getPhoneInfo()">更新信息</button>
+    </div>
+
+    <div class="card">
+        <h3>自定义命令</h3>
+        <input type="text" id="customCmd" required>
+        <button id="custRun" class="ripple" onclick="runCustCommand()">执行</button>
+    </div>
+
+    <div class="card">
         <h4>输出</h4>
         <textarea id="outputWindow" readonly></textarea>
     </div>
@@ -117,8 +137,7 @@
     <div class="card">
         <h3>关于</h3>
 
-        <p>Helium 是一个易于使用的ADB工具箱，支持多种服务的激活和常用命令执行。新版的Helium基于Electron技术设计
-            更加方便与美观。
+        <p>Helium 是一个易于使用的ADB工具箱，支持多种服务的激活和常用命令执行。新版的Helium基于Electron技术设计, 界面更加方便与美观。
         </p>
 
         <h4>作者</h4>
@@ -129,6 +148,7 @@
 
         <br></br>
         <i>如果你觉得这个工具需要改进，请在此联系我：kirakbit@gmail.com</i>
+        <i>本工具遵循MIT协议发放</i>
     </div>
 </body>
 </html>
