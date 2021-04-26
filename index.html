@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 14px;
+    }
+
+    .card{
+        margin: 5%;
+        color: white;
+        padding: 2.5%;
+        box-shadow: 0px 0px 10px 0px #9E9E9E;
+        border-radius: 3px;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        font-weight: normal;
+        color: black;
+    }
+
+    button{
+        border-radius: 3px;
+        padding: 10px 22px;
+        border: none;
+    }
+
+    /* Ripple effect */
+    .ripple {
+    background-position: center;
+    transition: background 0.8s;
+    }
+
+    .ripple:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    }
+
+    .ripple:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+    }
+
+    button {
+        border: none;
+        border-radius: 2px;
+        padding: 12px 18px;
+        font-size: 16px;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: white;
+        background-color: #2196f3;
+        box-shadow: 0 0 4px #999;
+        outline: none;
+        margin: 1%;
+    }
+
+    .header{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 3%;
+    }
+
+    p{
+        color: black;
+    }
+
+    i{
+        color: black;
+    }
+
+    textarea{
+        width: 100%;
+        height: 150px;
+        resize: none;
+        font-family: consolas;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <title>Helium</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <script src="renderer.js"></script>
+</head>
+<body style="background: white;">
+    <div class="header">
+        <h1>Helium toolbox</h1>
+    </div>
+    <div class="card">
+        <h3 >ADB命令</h3>
+
+        <button class="ripple" id="checkFastboot" onclick="checkFastboot()">检查Fastboot设备</button> &nbsp;&nbsp;
+        <button class="ripple" id="checkAdb" onclick="checkAdb()">检查adb设备</button> &nbsp;&nbsp;        
+        <button class="ripple" id="rebootSystem" onclick="rebootSystem()">重启至系统</button> &nbsp;&nbsp;
+        <button class="ripple" id="rebootBootloader" onclick="rebootBootloader()">重启至Bootloader</button>&nbsp;&nbsp;
+        <button class="ripple" id="rebootRecovery" onclick="rebootRecovery()">重启至Recovery</button>&nbsp;&nbsp;
+        <button class="ripple" id="shutdown" onclick="shutdown()">关机</button>&nbsp;&nbsp;
+        <button class="ripple" id="installApp" onclick="installApp()">安装应用</button> &nbsp;&nbsp;
+        <button class="ripple" id="uninstallApp" onclick="uninstallApp()">卸载应用</button> &nbsp;&nbsp;
+    </div>
+
+    <div class="card">
+        <h3>服务激活</h3>
+
+        <button class="ripple" id="activateShizuku" onclick="activateShizuku()">Shizuku</button> &nbsp;&nbsp;
+        <button class="ripple" id="activateBlackroom" onclick="activateBlackRoom()">小黑屋</button>&nbsp;&nbsp;
+        <button class="ripple" id="activatePermissiondog" onclick="activatePermissionDog()">权限狗</button>&nbsp;&nbsp;
+        <button class="ripple" id="activateIcebox" onclick="activateIcebox()">冰箱</button>&nbsp;&nbsp;
+        <button class="ripple" id="activateAirDog" onclick="activateAirDog()">空调狗</button>&nbsp;&nbsp;
+    </div>
+
+    <div class="card">
+        <h4>输出</h4>
+        <textarea id="outputWindow" readonly></textarea>
+    </div>
+
+    <div class="card">
+        <h3>关于</h3>
+
+        <p>Helium 是一个易于使用的ADB工具箱，支持多种服务的激活和常用命令执行。新版的Helium基于Electron技术设计
+            更加方便与美观。
+        </p>
+
+        <h4>作者</h4>
+        <p>ydw</p>
+
+        <button id="openMyGithub" class="ripple" onclick="openMyGithub()">我的Github</button>&nbsp;&nbsp;
+        <button id="openProjectPage" class="ripple" onclick="openProjectPage()">项目地址</button>&nbsp;&nbsp;
+
+        <br></br>
+        <i>如果你觉得这个工具需要改进，请在此联系我：kirakbit@gmail.com</i>
+    </div>
+</body>
+</html>
