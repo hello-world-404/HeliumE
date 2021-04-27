@@ -1,4 +1,6 @@
-﻿const electron = require('electron')
+﻿if (require('electron-squirrel-startup')) return;
+
+const electron = require('electron')
 const Menu = electron.Menu
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
@@ -17,7 +19,8 @@ function createWindow () {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true
-    }
+    },
+    icon: __dirname + '/icon.ico'
   })
 
   //Only open in debug

@@ -1,0 +1,9 @@
+{
+    "src": "HeliumE-win32-x64/",
+    "dest": "installer/",
+    "icon": "icon.ico",
+    "author": "ydw",
+    "version":"0.1.0",
+    "homepage":"https://www.geshkii.xyz",
+    "noMsi":"true"
+  }
